@@ -1,6 +1,7 @@
 package fr.iutlens.mmi.invader;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.RectF;
@@ -103,11 +104,21 @@ public class GameView extends View implements TimerAction, View.OnTouchListener 
      */
     @Override
     public void update() {
-        if (this.isShown()) { // Si la vue est visible
-            timer.scheduleRefresh(15); // programme le prochain rafraichissement
+        if (this.isShown() ) { // Si la vue est visible
+
+            if (canon.hit){
+                Intent intent = new Intent(getContext(),MainRocketActivity.class);
+                getContext().startActivity(intent);
+            }
+
+            else{
+                timer.scheduleRefresh(15); // programme le prochain rafraichissement
+            }
 
             armada.testIntersection(laser);
             armada.act();
+
+            canon.testIntersection(missile);
             canon.act();
 
             act(missile);
@@ -198,7 +209,6 @@ public class GameView extends View implements TimerAction, View.OnTouchListener 
 
     public void onFire(){
         canon.fire();
-
     }
 
     @Override
@@ -207,8 +217,6 @@ public class GameView extends View implements TimerAction, View.OnTouchListener 
                 motionEvent.getAction() == MotionEvent.ACTION_DOWN){
             float[] coord = {motionEvent.getX(),motionEvent.getY()};
             reverse.mapPoints(coord);
-
-
 
             if (oldX != -1000) canon.x += (coord[0]-oldX);
             oldX =  coord[0];
