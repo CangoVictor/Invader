@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.invader;
+package fr.iutlens.mmi.asteroid;
 
 import org.junit.Test;
 

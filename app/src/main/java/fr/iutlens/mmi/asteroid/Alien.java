@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.invader;
+package fr.iutlens.mmi.asteroid;
 
 /**
  * Created by dubois on 05/12/2018.

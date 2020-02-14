@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.invader.utils;
+package fr.iutlens.mmi.asteroid.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;

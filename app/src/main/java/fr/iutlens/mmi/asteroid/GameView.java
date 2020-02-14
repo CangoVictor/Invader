@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.invader;
+package fr.iutlens.mmi.asteroid;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,11 +12,10 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
 
-import fr.iutlens.mmi.invader.utils.RefreshHandler;
-import fr.iutlens.mmi.invader.utils.SpriteSheet;
-import fr.iutlens.mmi.invader.utils.TimerAction;
+import fr.iutlens.mmi.asteroid.utils.RefreshHandler;
+import fr.iutlens.mmi.asteroid.utils.SpriteSheet;
+import fr.iutlens.mmi.asteroid.utils.TimerAction;
 
 
 public class GameView extends View implements TimerAction, View.OnTouchListener {
@@ -66,7 +65,7 @@ public class GameView extends View implements TimerAction, View.OnTouchListener 
     private void init(AttributeSet attrs, int defStyle) {
 
         // Chargement des feuilles de sprites
-        SpriteSheet.register(R.mipmap.alien,2,1,this.getContext());
+        SpriteSheet.register(R.mipmap.alien,7,1,this.getContext());
         SpriteSheet.register(R.mipmap.missile,1,1,this.getContext());
         SpriteSheet.register(R.mipmap.laser,1,1,this.getContext());
         SpriteSheet.register(R.mipmap.rocket,1,1,this.getContext());

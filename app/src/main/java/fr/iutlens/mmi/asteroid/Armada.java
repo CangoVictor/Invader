@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.invader;
+package fr.iutlens.mmi.asteroid;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
@@ -67,7 +67,7 @@ class Armada extends Sprite{
         Iterator<Alien> it = alien.iterator();
         while(it.hasNext()){
             Sprite s = it.next();
-            s.state = (state/10)%2;
+            s.state = (state/10)%7;
             if (speed_y != 0) s.y+= speed_y;
             else s.x+=speed_x;
             if (s.act()) it.remove();
