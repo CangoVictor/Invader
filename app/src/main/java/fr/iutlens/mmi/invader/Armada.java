@@ -71,7 +71,7 @@ class Armada extends Sprite{
             if (speed_y != 0) s.y+= speed_y;
             else s.x+=speed_x;
             if (s.act()) it.remove();
-            else if (Math.random()<0.005f){
+            else if (Math.random()<0.0005f){
                 missile.add(new Projectile(R.mipmap.missile,s.x+missileDx,s.y+missileDy,+15));
             }
         }
